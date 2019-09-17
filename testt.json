@@ -1,0 +1,82 @@
+{
+    "Semester-1": {
+        "S1Subject-1": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S1Subject-2": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S1Subject-3": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ]
+    },
+    "Semester-2": {
+        "S2Subject-1": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S2Subject-2": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S2Subject-3": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ]
+    },
+    "Semester-3": {
+        "S3Subject-1": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S3Subject-2": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S3Subject-3": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ]
+    },
+    "Semester-4": {
+        "S4Subject-1": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S4Subject-2": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ],
+        "S4Subject-3": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4"
+        ]
+    }
+}
