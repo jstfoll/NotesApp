@@ -40,10 +40,29 @@ def upload():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
+        data = request.form.to_dict(flat= True)
+        if any(value == '' for value in data.values()):
+            flash("All fields are mandatory")
+            return redirect(url_for('.upload'))
+        filename=''
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            filename=filename.split('.')[-1]
+            ffname=data['Semester']+'//'+data['Subject']+'//'+data['Module']
+            ffname1=data['file_name']+filename
+            if(os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'],ffname))):
+                file.save(str(os.path.join(app.config['UPLOAD_FOLDER'],ffname,ffname1)))
+            else:
+                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'],ffname))
+                file.save(str(os.path.join(app.config['UPLOAD_FOLDER'],ffname,ffname1)))
+            print("***************************")
+            print(f"File {data['file_name']+'.'+filename} Saved")
+            print("***************************")
 
         
         data = request.form.to_dict(flat= True)
         print(data)
+        return render_template("success.html",file=data['file_name']+'.'+filename)
 
 # @app.route('/<name>')
 # def personal(name):
