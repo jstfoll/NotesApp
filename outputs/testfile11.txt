@@ -1,0 +1,19 @@
+Navigate  https://hc7-715.wdf.sap.corp/ui#SalesInquiry-create?sap-ui-tech-hint=GUI
+Login  S4C_AUTOMATION  Welcome1!
+Enter  Sales Document Type  IN
+Click  button  Continue (Enter)
+Enter  Sold-To Party  10100003
+Enter  Ship-To Party  10100003
+Enter  Customer Reference  Testing
+Enter  Customer Reference Date  util('$TODAY'))
+Click  button  Save (Ctrl+S)
+Navigate  https://hc7-715.wdf.sap.corp/ui#SalesInquiry-change?sap-ui-tech-hint=GUI
+Login  S4C_AUTOMATION  Welcome1!
+Click  button  Continue (Enter)
+Click  button  Save (Ctrl+S)
+Navigate  https://hc7-715.wdf.sap.corp/ui#SalesInquiry-manage
+Login  S4C_AUTOMATION  Welcome1!
+Click  button  Go
+Click  button  Reject All Items
+Enter  Reason for Rejection  Customer not eligible
+Click  button  OK

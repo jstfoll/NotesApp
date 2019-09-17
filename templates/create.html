@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+        <script src="https://unpkg.com/grapesjs"></script>
+        <script src="https://rawcdn.githack.com/artf/grapesjs-blocks-basic/c5b3134fc55b7d40b3ffa945c32e542d3471bd3e/dist/grapesjs-blocks-basic.min.js"></script>
+        <style>
+            body {
+                margin: 0
+            }
+            body #gjs {
+                height: 100%
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gjs"></div>
+
+        <script type="text/javascript">
+        var editor = grapesjs.init({
+            container : '#gjs',
+            height: 'auto',
+            plugins: ['gjs-blocks-basic'],
+            components: '<div class="txt-red">Hello world!</div>',
+            style: '.txt-red{color: red}',
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+    <asx:values>
+        <DATA>
+            <PR_ITEMS>
+                <item>
+                    <PROCESSTEST_ID/>
+                    <PROCESS_ID/>
+                    <SEQNO>00001</SEQNO>
+                    <MANDT>715</MANDT>
+                    <STEP_ID/>
+                    <STEP_NAME>New Internal Project</STEP_NAME>
+                    <VERSION>0000</VERSION>
+                    <COUNTRY>XX</COUNTRY>
+                    <STEP_DESC>New Internal Project</STEP_DESC>
+                    <UI_TECHNOLOGY/>
+                    <SOFTWARE_COMP/>
+                    <REL>113</REL>
+                    <APPLICATION/>
+                    <PKG/>
+                    <TAGNAME>InternalProject-createInternalProject</TAGNAME>
+                    <URL_PARAMS/>
+                    <STEP_XML>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0"&gt;&lt;asx:values&gt;&lt;DATA SEMANTIC_OBJECT="InternalProject-createInternalProject" COMPLETE_URL="" UITECH="04" RECTIME="ms" ARTIFACT_ID=""&gt;&lt;ACTION TYPE="FIELDS" STATUS="" PERF="" OPTIONAL_STEP="" FORMULA="" UICHECK="" UITECH=""&gt;&lt;FIELD STATUS=""&gt;&lt;NAME/&gt;&lt;VALUE/&gt;&lt;TYPE&gt;AppTag&lt;/TYPE&gt;&lt;LABEL&gt;InternalProject-createInternalProject&lt;/LABEL&gt;&lt;CHANGEABLE/&gt;&lt;FORMULA_ID/&gt;&lt;ID/&gt;&lt;IMPORT&gt;E0071BF8D1D91EE8ACB2DFB369821E8E&lt;/IMPORT&gt;&lt;EXPORT/&gt;&lt;INDEX/&gt;&lt;CHECK/&gt;&lt;CHECK_PARAM/&gt;&lt;NODE_KEY/&gt;&lt;OBJECT_REPOSITORY/&gt;&lt;SERVICE/&gt;&lt;ENTITYSET/&gt;&lt;PROPERTY1/&gt;&lt;PROPERTY2/&gt;&lt;PROPERTY3/&gt;&lt;FILTER1/&gt;&lt;FILTER2/&gt;&lt;TECH_OBJECT/&gt;&lt;/FIELD&gt;&lt;/ACTION&gt;&lt;ACTION TYPE="FIELDS" STATUS="" PERF="" OPTIONAL_STEP="" FORMULA="" UICHECK="" UITECH="04"&gt;&lt;FIELD STATUS=""&gt;&lt;NAME&gt;Create--ProjID-inner&lt;/NAME&gt;&lt;VALUE&gt;123456&lt;/VALUE&gt;&lt;TYPE&gt;InputField&lt;/TYPE&gt;&lt;LABEL&gt;Project ID&lt;/LABEL&gt;&lt;CHANGEABLE/&gt;&lt;FORMULA_ID/&gt;&lt;ID&gt;Create--ProjID-inner&lt;/ID&gt;&lt;IMPORT&gt;E0071BF8D1D91EE8ACB2DFB369823E8E&lt;/IMPORT&gt;&lt;EXPORT/&gt;&lt;INDEX/&gt;&lt;CHECK/&gt;&lt;CHECK_PARAM/&gt;&lt;NODE_KEY&gt;sapMInputBaseInner&lt;/NODE_KEY&gt;&lt;OBJECT_REPOSITORY&gt;ClassName: sapMInputBaseInner;TagName: INPUT;MouseEvent: LeftClick;FrameHierarchy: topwindow&lt;/OBJECT_REPOSITORY&gt;&lt;SERVICE/&gt;&lt;ENTITYSET/&gt;&lt;PROPERTY1/&gt;&lt;PROPERTY2/&gt;&lt;PROPERTY3/&gt;&lt;FILTER1/&gt;&lt;FILTER2/&gt;&lt;TECH_OBJECT/&gt;&lt;/FIELD&gt;&lt;/ACTION&gt;&lt;ACTION TYPE="FIELDS" STATUS="" PERF="" OPTIONAL_STEP="" FORMULA="" UICHECK="" UITECH="04"&gt;&lt;FIELD STATUS=""&gt;&lt;NAME&gt;Create--ProjName-inner&lt;/NAME&gt;&lt;VALUE&gt;TestProj&lt;/VALUE&gt;&lt;TYPE&gt;InputField&lt;/TYPE&gt;&lt;LABEL&gt;Project Name&lt;/LABEL&gt;&lt;CHANGEABLE/&gt;&lt;FORMULA_ID/&gt;&lt;ID&gt;Create--ProjName-inner&lt;/ID&gt;&lt;IMPORT&gt;E0071BF8D1D91EE8ACB2DFB369825E8E&lt;/IMPORT&gt;&lt;EXPORT/&gt;&lt;INDEX/&gt;&lt;CHECK/&gt;&lt;CHECK_PARAM/&gt;&lt;NODE_KEY&gt;sapMInputBaseInner&lt;/NODE_KEY&gt;&lt;OBJECT_REPOSITORY&gt;ClassName: sapMInputBaseInner;TagName: INPUT;MouseEvent: LeftClick;FrameHierarchy: topwindow&lt;/OBJECT_REPOSITORY&gt;&lt;SERVICE/&gt;&lt;ENTITYSET/&gt;&lt;PROPERTY1/&gt;&lt;PROPERTY2/&gt;&lt;PROPERTY3/&gt;&lt;FILTER1/&gt;&lt;FILTER2/&gt;&lt;TECH_OBJECT/&gt;&lt;/FIELD&gt;&lt;/ACTION&gt;&lt;ACTION TYPE="CLICK" STATUS="" PERF="" OPTIONAL_STEP="" FORMULA="" UICHECK="" UITECH="04"&gt;&lt;CLICK CLICK_CATEGORY="" PROGRAM_NAME="" SCREEN_NUMBER=""&gt;&lt;TYPE&gt;Button&lt;/TYPE&gt;&lt;NAME&gt;application-InternalProject-createInternalProject-component---create--CPM_INT_PROJ_SAVE-button&lt;/NAME&gt;&lt;LABEL&gt;Save&lt;/LABEL&gt;&lt;NODE_KEY&gt;sapMBarChild sapMBtn sapMBtnBase sapMBtnInverted&lt;/NODE_KEY&gt;&lt;NODE_ACTION/&gt;&lt;COLUMN_NAME/&gt;&lt;ID&gt;application-InternalProject-createInternalProject-component---create--CPM_INT_PROJ_SAVE-button&lt;/ID&gt;&lt;OBJECT_REPOSITORY&gt;ClassName: sapMBarChild sapMBtn sapMBtnBase sapMBtnInverted;TagName: BUTTON;MouseEvent: LeftClick;FrameHierarchy: topwindow;nearByIndex: 1&lt;/OBJECT_REPOSITORY&gt;&lt;/CLICK&gt;&lt;/ACTION&gt;&lt;PARAMETERS&gt;&lt;PARAMETER&gt;&lt;NAME/&gt;&lt;VALUE/&gt;&lt;/PARAMETER&gt;&lt;/PARAMETERS&gt;&lt;/DATA&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</STEP_XML>
+                    <ROLE>DEFAULT</ROLE>
+                    <LANGUAGE>E</LANGUAGE>
+                    <STATUS/>
+                    <CREATED_ON>0000-00-00</CREATED_ON>
+                    <CREATED_BY/>
+                    <CHANGED_ON>0000-00-00</CHANGED_ON>
+                    <CHANGED_BY/>
+                    <BUKRS/>
+                    <VKORG/>
+                    <EKORG/>
+                    <WERKS/>
+                    <KKBER/>
+                    <WAERS/>
+                    <VTWEG/>
+                    <SPART/>
+                    <VKGRP/>
+                    <VKBUR/>
+                </item>
+            </PR_ITEMS>
+            <MANDT>715</MANDT>
+            <PROCESS_ID/>
+            <PROCESS_NAME/>
+            <VERSION>0113</VERSION>
+            <PROCESS_DESC>Create Cus Project</PROCESS_DESC>
+            <COUNTRY>XX</COUNTRY>
+            <LANGUAGE>E</LANGUAGE>
+            <STATUS/>
+            <CREATED_ON>0000-00-00</CREATED_ON>
+            <CREATED_BY/>
+            <CHANGED_ON>0000-00-00</CHANGED_ON>
+            <CHANGED_BY/>
+            <ACTIVE/>
+            <ADAPTATION_ACTIVE/>
+            <APPLICATION/>
+            <CREATED_AT>00:00:00</CREATED_AT>
+            <CHANGED_AT>00:00:00</CHANGED_AT>
+            <BUKRS/>
+            <VKORG/>
+            <EKORG/>
+            <WERKS/>
+            <KKBER/>
+            <WAERS/>
+            <VTWEG/>
+            <SPART/>
+            <VKGRP/>
+            <VKBUR/>
+        </DATA>
+    </asx:values>
+</asx:abap>

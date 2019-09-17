@@ -1,0 +1,1370 @@
+{
+  "BPD_Details": {"name": "JC0", "sub_header":"Marketing Lead Management"},
+  "Purpose": [
+    "Marketing Lead Management allows marketing professionals to define and maintain rules for lead scores and lead stages without support from business analysts or data scientists.",
+    "Marketers can fine-tune scores together with sales and create lead stages based on company-specific requirements. Optional integration with SAP Cloud for Customer (C4C) or SAP CRM allows progression of leads to action stages with full visibility of success back from the Campaign level.",
+    "This document provides a detailed procedure for testing this scope item after solution activation, reflecting the predefined scope of the solution. Each process step, report, or item is covered in its own section, providing the system interactions (test steps) in a table view. Steps that are not in scope of the process but are needed for testing are marked accordingly. Project-specific steps must be added."
+  ],
+  "Roles": [
+    {
+      "Business Role": "Marketing Expert",
+      "Business Role ID as Delivered by SAP": "SAP_BR_MARKETING_EXPERT",
+      "Log On": ""
+    },
+    {
+      "Business Role": "Marketing Manager",
+      "Business Role ID as Delivered by SAP": "SAP_BR_MARKETING_MANAGER",
+      "Log On": ""
+    }
+  ],
+  "Master_Data": [],
+  "Overview_Table": [
+    { "Process Step": "Common Steps" },
+    {
+      "Process Step": "Create Lead Score",
+      "Business Role": "Marketing Expert",
+      "App Name": "Score Builder (F1898)",
+      "Expected Results": "Scores are created."
+    },
+    {
+      "Process Step": "Create Segmentation Building Blocks",
+      "Business Role": "Marketing Expert",
+      "App Name": "Segmentation Building Blocks (F0908A)",
+      "Expected Results": "Building Blocks are created."
+    },
+    {
+      "Process Step": "Define Lead Stages",
+      "Business Role": "Marketing Expert",
+      "App Name": "Lead Stages (F1932)",
+      "Expected Results": "Lead Stages are defined."
+    },
+    { "Process Step": "Set up and Execute Lead Campaign" },
+    {
+      "Process Step": "Create Segmentation Model",
+      "Business Role": "Marketing Expert",
+      "App Name": "Segmentation Models (F1896A)",
+      "Expected Results": "Segmentation Model is released."
+    },
+    {
+      "Process Step": "Create and Release Dynamic Target Group",
+      "Business Role": "Marketing Expert",
+      "App Name": "Target Groups (F0906A)",
+      "Expected Results": "Target Group is activated."
+    },
+    {
+      "Process Step": "Create and Start Lead Transfer",
+      "Business Role": "Marketing Expert",
+      "App Name": "Transfer Leads (F2188)",
+      "Expected Results": "Leads are created."
+    },
+    {
+      "Process Step": "Update Lead and Opportunity Status in SAP Cloud for Customer or SAP CRM",
+      "Business Role": "Marketing Expert",
+      "App Name": "",
+      "Expected Results": "The Lead Status is updated."
+    },
+    {
+      "Process Step": "Display Lead and Opportunity Data in Contact Profile",
+      "Business Role": "Marketing Expert",
+      "App Name": "Contacts (F2380)",
+      "Expected Results": "Lead information is shown in contact Profile."
+    },
+    { "Process Step": "Set up and Execute Call Qualification (Optional)" },
+    {
+      "Process Step": "Create Segmentation Model",
+      "Business Role": "Marketing Expert",
+      "App Name": "Segmentation Models (F1896A)",
+      "Expected Results": "Segmentation Model is released."
+    },
+    {
+      "Process Step": "Create and Release Target Group",
+      "Business Role": "Marketing Expert",
+      "App Name": "Target Groups (F0906A)",
+      "Expected Results": "Target Group is activated."
+    },
+    {
+      "Process Step": "Create and Start Call Qualification Campaign",
+      "Business Role": "Marketing Expert",
+      "App Name": "Campaigns (F2352)",
+      "Expected Results": "Campaign is created."
+    },
+    {
+      "Process Step": "Update Lead and Activity Status in SAP Cloud for Customer",
+      "Business Role": "Marketing Expert",
+      "App Name": "",
+      "Expected Results": "The Lead Status is updated."
+    },
+    {
+      "Process Step": "Review Campaign Performance",
+      "Business Role": "Marketing Expert",
+      "App Name": "Campaigns (F2352)",
+      "Expected Results": "Campaign Performance is analyzed."
+    },
+    { "Process Step": "Additional Common Steps" },
+    {
+      "Process Step": "Use Lead Dashboard",
+      "Business Role": "Marketing Expert",
+      "App Name": "Lead Dashboard",
+      "Expected Results": "Lead Status and Details and Lead Management KPIs are analyzed."
+    },
+    {
+      "Process Step": "Analyze Reports in Analytics and Report Gallery",
+      "Business Role": "Marketing Expert",
+      "App Name": "Analytics and Report Gallery (F2955)",
+      "Expected Results": "Analytics Story is displayed."
+    }
+  ],
+  "Test_Processes": {
+    "0 5.1 Create Lead Score": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Score Builder (F1898) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Score Builder (F1898)", "Action": "navigate" },
+            { "Label": "Score Builder", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Lead Quality Score",
+          "Instruction": "Choose Create Score to create a new score. In the dialog screen, enter the following values: Name: Lead Quality Score Segmentation Profile: All Contacts Purpose: <leave empty> Marketing Area: for example, Global. Confirm with Save. Note The Marketing Area authorization concept determines the users who can edit the score. The Marketing Area settings have no impact on who can use the score in segmentation. To offer the new score as a segmentation filter attribute, select the Segmentation Profile where the score can be used in the segmentation.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Create Score", "Action": "click" },
+            {
+              "Label": "Name",
+              "Action": "fill",
+              "Value": "Lead Quality Score"
+            },
+            {
+              "Label": "Segmentation Profile",
+              "Action": "fill",
+              "Value": "All Contacts"
+            },
+            { "Label": "Purpose", "Action": "fill", "Value": "<leave empty>" },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "Segmentation Profile", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Add Rule Model",
+          "Instruction": "Add new rule model to the score by choosing + (Create new Rule Model) on the right side of the screen. In the dialog window, enter a Name for the rule model (for example, Lead Quality Score Rule model). Choose Save. Optionally you can add Time Frame for Analysis. You can then add rules to this rule set via Add Rule and Choose Save. Add the following rules: Note In case there is more than one condition, choose + (adds a new line) and then continue with the AND statement. Rule 1: IF EmailOptIn of the Contact exists in Usage of data allowed by owner AND EmailAdressAvailable of the Contact exists in TRUE THEN ScoreChangedBy 10 Rule 2: IF PhoneOptIn of the Contact exists in Usage of data allowed by owner AND PhoneAvailable of the Contact exists in TRUE THEN ScoreChangedBy 10 Rule 3: IF Gender of the Contact exists in Female, Male THEN ScoreChangedBy 10 Rule 4: IF PostalCode of the Contact is greater than 0 THEN ScoreChangedBy 10 Save your Rule Model. You can select a target group in the Preview of Score Distribution section to get an overview how the score would be distributed within your target group. Select a target group and choose Preview. Choose Activate and navigate Back to the previous screen.",
+          "Expected Result": "Note A score can have more than one rule model, because rules can have different validity. For example, one rule model can be defined for the region North America and another rule model can be valid for Asia. The system automatically detects the context where the score is executed and selects the best fitting rule model for score calculation. The Preview of Score Distribution shows the distribution of the Phone Affinity score for all members of the selected Target Group.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "+", "Action": "click" },
+            { "Label": "(Create new Rule Model)", "Action": "click" },
+            {
+              "Label": "Name",
+              "Action": "fill",
+              "Value": "Lead Quality Score Rule model"
+            },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "Time Frame for Analysis", "Action": "click" },
+            { "Label": "Add Rule", "Action": "click" },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "+ ", "Action": "click" },
+            { "Label": "(adds a new line)", "Action": "click" },
+            { "Label": "AND", "Action": "click" },
+            { "Label": "Rule 1", "Action": "click" },
+            { "Label": "EmailOptIn of the Contact", "Action": "click" },
+            { "Label": "Usage of data allowed by owner", "Action": "click" },
+            {
+              "Label": "EmailAdressAvailable of the Contact",
+              "Action": "click"
+            },
+            { "Label": "TRUE", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 2", "Action": "click" },
+            { "Label": "PhoneOptIn of the Contact", "Action": "click" },
+            { "Label": "Usage of data allowed by owner", "Action": "click" },
+            { "Label": "PhoneAvailable of the Contact", "Action": "click" },
+            { "Label": "TRUE", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 3", "Action": "click" },
+            { "Label": "Gender of the Contact", "Action": "click" },
+            { "Label": "Female, Male", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 4", "Action": "click" },
+            { "Label": "IF PostalCode of the Contact", "Action": "click" },
+            { "Label": "0", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "Preview of Score Distribution", "Action": "click" },
+            { "Label": "Preview", "Action": "click" },
+            { "Label": "Activate", "Action": "click" },
+            { "Label": "Back", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Usage on Profiles",
+          "Instruction": "In the Use in Client Application section, select Attribute Group for Segmentation Profile: Scores Client Application: Leads Facet on Profiles Customize how the score is displayed on the profiles. Set the following limits for the score values and select a label and a color for the different score ranges: Score Above or Equal 0 Color: purple Label: Poor 10 Color: orange Label: Low 20 Color: yellow Label: Acceptable 30 Color: light blue Label: Good 40 Color: grey Label: High 50 Color: green Label: Excellent Select an icon for the score by choosing the tile in the Preview. Save your scores.",
+          "Expected Result": "Note Release at least one rule model per score to be able to use it in segmentation. The score value on the tile is not the direct response rate, but a category like Acceptable.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Use in Client Application", "Action": "click" },
+            {
+              "Label": "Attribute Group for Segmentation Profile",
+              "Action": "fill",
+              "Value": "Scores"
+            },
+            {
+              "Label": "Client Application",
+              "Action": "fill",
+              "Value": "Leads Facet on Profiles"
+            },
+            { "Label": "Score Above or Equal", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "score", "Action": "click" },
+            { "Label": "Save", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Create Lead Intent Score",
+          "Instruction": "Navigate Back. Choose Create Score to create a new score. In the dialog screen, enter the following values: Name: Lead Intent Score Segmentation Profile: All Contacts Purpose: <leave empty> Marketing Area: for example, Global. Confirm with Save. Note The Marketing Area authorization concept determines the users who can edit the score. The Marketing Area settings have no impact on who can use the score in segmentation. To offer the new score as a segmentation filter attribute, select the Segmentation Profile where the score can be used in the segmentation.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Back", "Action": "click" },
+            { "Label": "Create Score", "Action": "click" },
+            { "Label": "Name", "Action": "fill", "Value": "Lead Intent Score" },
+            {
+              "Label": "Segmentation Profile",
+              "Action": "fill",
+              "Value": "All Contacts"
+            },
+            { "Label": "Purpose", "Action": "fill", "Value": "<leave empty>" },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            { "Label": "Save", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "7",
+          "Test Step Name": "Add Rule Model",
+          "Instruction": "Add new rule sets to the score by choosing + (Create new Rule Model). In the dialog window, enter a name for the rule model (for example, Lead Quality Score) and confirm with Save. Optionally you can add Time Frame for Analysis. You can then add rules to this rule model via Add Rule and assign a score. Add the following rules: Note In case there is more than one condition, choose + (adds a new line) and then continue with the AND statement. Rule 1: IF AgeInDays of the Interaction is less than 60 AND Type of the Interaction exists in Website Video, Website Visit THEN ScoreChangedBy 10 Rule 2: IF AgeInDays of the Interaction is less than 30 AND Type of the Interaction exists in Website Video, Website Visit THEN ScoreChangedBy 10 Rule 3: IF AgeInDays of the Interaction is less than 10 AND Type of the Interaction exists in Website Video, Website Visit THEN ScoreChangedBy 10 Rule 4: IF AgeInDays of the Interaction is less than 50 AND Type of the Interaction exists in Website Video, Website Visit THEN ScoreChangedBy 10 Save your rule model. You can select a target group in the Preview of Score Distribution section to get an overview on how the score would be distributed within your target group. Select a target group and choose Preview. Choose Activate and navigate Back to the previous screen.",
+          "Expected Result": "The Preview of the Score Distribution shows the distribution of the score for all members of the selected target group. Note A score can have more than one rule model, because rules can have different validity. For example, one rule model can be defined for the region North America and another rule model can be valid for Asia. The system automatically detects the context where the score is executed and selects the best fitting rule model for score calculation.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "+", "Action": "click" },
+            { "Label": "(Create new Rule Model)", "Action": "click" },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "Time Frame for Analysis", "Action": "click" },
+            { "Label": "Add Rule", "Action": "click" },
+            { "Label": "+", "Action": "click" },
+            { "Label": "Rule 1", "Action": "click" },
+            { "Label": "AgeInDays of the Interaction", "Action": "click" },
+            { "Label": "60", "Action": "click" },
+            { "Label": "Type of the Interaction", "Action": "click" },
+            { "Label": "Website Video, Website Visit", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 2", "Action": "click" },
+            { "Label": "AgeInDays of the Interaction", "Action": "click" },
+            { "Label": "30", "Action": "click" },
+            { "Label": "Type of the Interaction", "Action": "click" },
+            { "Label": "Website Video, Website Visit", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 3", "Action": "click" },
+            { "Label": "AgeInDays of the Interaction", "Action": "click" },
+            { "Label": "10", "Action": "click" },
+            { "Label": "Type of the Interaction", "Action": "click" },
+            { "Label": "Website Video, Website Visit", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Rule 4", "Action": "click" },
+            { "Label": "AgeInDays of the Interaction", "Action": "click" },
+            { "Label": "Type of the Interaction", "Action": "click" },
+            { "Label": "Website Video, Website Visit", "Action": "click" },
+            { "Label": "ScoreChangedBy", "Action": "click" },
+            { "Label": "Save", "Action": "click" },
+            { "Label": "Preview of Score Distribution", "Action": "click" },
+            { "Label": "Preview", "Action": "click" },
+            { "Label": "Activate", "Action": "click" },
+            { "Label": "Back", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "8",
+          "Test Step Name": "Usage on Profiles",
+          "Instruction": "In the Use in Client Application section, select Attribute Group for Segmentation Profile: Scores Client Application: Leads Facet on Profiles Customize how the score is displayed on the profiles. Set the following limits for the score values and select a label and a color for the different score ranges: Score Above or Equal 0 Color: purple Label: Poor 10 Color: orange Label: Low 20 Color: yellow Label: Acceptable 30 Color: light blue Label: Good 40 Color: grey Label: High 50 Color: green Label: Excellent Select an icon for the score by choosing the tile in the Preview. Save your scores.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Use in Client Application", "Action": "click" },
+            {
+              "Label": "Attribute Group for Segmentation Profile",
+              "Action": "fill",
+              "Value": "Scores"
+            },
+            {
+              "Label": "Client Application",
+              "Action": "fill",
+              "Value": "Leads Facet on Profiles"
+            },
+            { "Label": "Score Above or Equal", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Color", "Action": "click" },
+            { "Label": "Label", "Action": "click" },
+            { "Label": "Preview", "Action": "click" },
+            { "Label": "Save", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "1 5.2 Create Segmentation Building Blocks": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Segmentation Building Blocks (F0908A) app.",
+          "Expected Result": "The Building Blocks screen opens displaying a list of all available building blocks.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Application": " Segmentation Building Blocks (F0908A)",
+              "Action": "navigate"
+            },
+            { "Label": "Segmentation Building Blocks", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Building Block",
+          "Instruction": "Choose Create.",
+          "Expected Result": "A dialog box shows the available Segmentation Objects. If there is only one valid option, the dialog box may not display.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Create", "Action": "click" }]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Choose Segmentation Profile",
+          "Instruction": "Choose a Segmentation Object (for example, Contacts) and choose Create.",
+          "Expected Result": "The new building block opens. At the top of the screen for the new segmentation model, you can see your chosen object, for example, All Contacts. On the left you can see the different segmentation attributes that you can use for contact selection, for example, Contacts, Accounts, and so on.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Label": "Segmentation Object",
+              "Action": "fill",
+              "Value": "Contacts"
+            },
+            { "Label": "Create", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Choose a Characteristic from the Attribute List",
+          "Instruction": "Drag and drop the attribute, for example, Interaction Date from the Interactions section onto the header node All Contacts. Select Preset Period and then select Last 3 months. Choose Exclude.",
+          "Expected Result": "A new segment is created beneath the top node.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Value": "Interactions", "Action": "fill" },
+            { "Label": "All Contacts", "Action": "click" },
+            { "Label": "Preset Period", "Action": "click" },
+            { "Label": "Last 3 months", "Action": "click" },
+            { "Label": "Exclude", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Save and Publish Building Block",
+          "Instruction": "Choose Save and Publish Building Block. Enter a Building Block Name (for example, BB1) and a Description.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save and Publish Building Block", "Action": "click" },
+            { "Label": "Name", "Action": "fill", "Value": "BB1" },
+            { "Label": "Description", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "7",
+          "Test Step Name": "Create Second Building Block",
+          "Instruction": "Close the screen. In the Building Block screen, choose Create again.",
+          "Expected Result": "A dialog box shows available Segmentation Objects. If there is only one valid option, the dialog box may not display.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Building Block", "Action": "click" },
+            { "Label": "Create", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "8",
+          "Test Step Name": "Choose Segmentation Profile",
+          "Instruction": "Choose a Segmentation Object (for example, All Contacts) and choose OK.",
+          "Expected Result": "The new Building Block is opened. At the top of the screen for the new segmentation model, you can see your chosen object: for example, All Contacts. On the left you can see the different segmentation attributes that you can use for contact selection, for example, Contacts, Accounts, and so on.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Label": "Segmentation Object",
+              "Action": "fill",
+              "Value": "All Contacts"
+            },
+            { "Label": "OK", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "9",
+          "Test Step Name": "Choose a Characteristic from the Attribute List",
+          "Instruction": "Drag and drop the attribute, for example, Interaction Date from the Interactions section onto the header node All Contacts. Select Preset Period and then select Last 3 months. Choose Keep.",
+          "Expected Result": "A new segment is created beneath the top node.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Value": "Interaction Date" },
+            { "Label": "Interactions", "Action": "click" },
+            { "Label": "All Contacts", "Action": "click" },
+            { "Label": "Preset Period", "Action": "click" },
+            { "Label": "Last 3 months", "Action": "click" },
+            { "Label": "Keep", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "10",
+          "Test Step Name": "Save and Publish Building Block",
+          "Instruction": "Choose Save and Publish Building Block . Enter a Building Block Name (for example, BB2) and a Description.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save and Publish Building Block", "Action": "click" },
+            { "Label": "Name", "Action": "fill", "Value": "BB2" },
+            { "Label": "Description", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "11",
+          "Test Step Name": "Choose a Characteristic from the Attribute List",
+          "Instruction": "Drag and drop the attribute, for example, Lead Intent Score from the Interactions Rating section onto the node Interaction Date. Make the following entry and choose Keep: Value: 5",
+          "Expected Result": "A new segment is created beneath the top node.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Value": "Lead Intent Score" },
+            { "Label": "Interactions Rating", "Action": "click" },
+            { "Label": "Interaction Date", "Action": "click" },
+            { "Label": "Keep", "Action": "click" },
+            { "Label": "Value", "Action": "fill", "Value": "5" }
+          ]
+        },
+        {
+          "Test Step #": "12",
+          "Test Step Name": "Save and Publish Building Block",
+          "Instruction": "Choose Save the building block as.... Enter a Building Block Name (for example, BB3) and a Description. Choose Save and Publish Building Block.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save the building block as...", "Action": "click" },
+            {
+              "Label": "Building Block Name",
+              "Action": "fill",
+              "Value": "BB3"
+            },
+            { "Label": "Description", "Action": "click" },
+            { "Label": "Save and Publish Building Block", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "13",
+          "Test Step Name": "Choose a Characteristic from the Attribute List",
+          "Instruction": "Choose the Activity Score node. In the Scores section, choose the Lead Quality Score or Lead Intent Score label. Afterwards, select a target object, that is, a product. You can move the percentage values in the graph via the slider. Note Alternatively, Lead Scores from SAP Leonardo Machine Learning can be used. This requires the Integration Scenario Marketing - Machine Learning Integration (SAP_COM_0297). Then select Keep. The new segment is added below the Activity Score node.",
+          "Expected Result": "A new segment is created beneath the node.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Activity Score", "Action": "click" },
+            { "Label": "Scores", "Action": "click" },
+            { "Label": "Lead Quality Score", "Action": "click" },
+            { "Label": "Lead Intent Score", "Action": "click" },
+            { "Label": "Keep", "Action": "click" },
+            { "Label": "Activity Score", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "14",
+          "Test Step Name": "Save and Publish Building Block",
+          "Instruction": "Choose Save the building block as... Enter a Building Block Name (for example: BB4) and a Description. Choose Save and Publish Building Block.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save the building block as...", "Action": "click" },
+            {
+              "Label": "Building Block Name",
+              "Action": "fill",
+              "Value": "BB4"
+            },
+            { "Label": "Description", "Action": "click" },
+            { "Label": "Save and Publish Building Block", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "2 5.3 Define Lead Stages": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Lead Stages (F1932) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Lead Stages (F1932)", "Action": "navigate" },
+            { "Label": "Lead Stages", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Change to Edit Mode",
+          "Instruction": "Choose the Edit button on the lower right part of the Stage Sets page.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Edit", "Action": "click" },
+            { "Label": " Stage Sets", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Enter Stages",
+          "Instruction": "Define Stage Names, for example: Inactive Inquiry Prospect Qualified",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Stage Names", "Action": "fill", "Value": "Inactive" },
+            { "Value": "Prospect", "Action": "fill" },
+            { "Value": "Qualified" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Assign Building Block to Stages",
+          "Instruction": "Select a Building Block that you created in the previous step, and make the following assignments: Note Building Block needs to be in status Public to appear here. Inactive: BB1 Inquiry: BB2 Prospect: BB3 Qualified: BB4",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Building Block", "Action": "click" },
+            { "Label": "Public", "Action": "click" },
+            { "Label": "Inactive", "Action": "fill", "Value": "BB1" },
+            { "Label": "Inquiry", "Action": "fill", "Value": "BB2" },
+            { "Label": "Prospect", "Action": "fill", "Value": "BB3" },
+            { "Label": "Qualified", "Action": "fill", "Value": "BB4" }
+          ]
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Activate Stages",
+          "Instruction": "Set Active to On for each of the stages and save the stages.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Active", "Action": "click" },
+            { "Label": "On", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "3 5.4.1 Create Segmentation Model": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Segmentation Models (F1896A) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Application": " Segmentation Models (F1896A)",
+              "Action": "navigate"
+            },
+            { "Label": "Segmentation Models", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Segmentation Model",
+          "Instruction": "Choose Create. Select Segmentation Profile: All Contacts and confirm with Create.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Create", "Action": "click" },
+            {
+              "Label": "Segmentation Profile: All Contacts",
+              "Action": "click"
+            },
+            { "Label": "Create", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Assign Building Block",
+          "Instruction": "Drag and drop the Building Block BB4 you created earlier to the top level node.",
+          "Expected Result": "Building Block BB4 is assigned to the Segmentation Model.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "BB4", "Action": "click" }]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Save Segmentation Model",
+          "Instruction": "Choose the Save the Segmentation Model icon. Make the following entry and choose OK. Segmentation Model: for example, Lead Segmentation Stage 4.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save the Segmentation Model", "Action": "click" },
+            { "Label": "OK", "Action": "click" },
+            {
+              "Label": "Segmentation Model",
+              "Action": "fill",
+              "Value": "Lead Segmentation Stage 4"
+            }
+          ]
+        }
+      ]
+    },
+    "4 5.4.2 Create and Release Dynamic Target Group": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Create Target Group",
+          "Instruction": "Stay in the Segmentation Model screen. Choose the black arrow and Create Target Group.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Segmentation Model", "Action": "click" },
+            { "Label": "Create Target Group", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Save Target Group",
+          "Instruction": "Make the following entries: Target Group Name: for example, Leads Stage 4. Type: Target Group. Category: Dynamic (default). Marketing Area: for example, Global. Choose Save and Open.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Label": "Target Group Name",
+              "Action": "fill",
+              "Value": "Leads Stage 4"
+            },
+            { "Label": "Type", "Action": "fill", "Value": "Target Group" },
+            {
+              "Label": "Category",
+              "Action": "fill",
+              "Value": "Dynamic (default)"
+            },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            { "Label": "Save and Open", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Release Target Group",
+          "Instruction": "Set status to Released.",
+          "Expected Result": "A message confirms the release of the target group, and also the status on the left side has switched to Released. Note By default the target group workflow is inactive. If the business workflow for target groups has been activated by the customer, the marketing manager needs to approve it via the Marketing Approvals (F2205) app.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Released", "Action": "click" }]
+        }
+      ]
+    },
+    "5 5.4.3 Create and Start Lead Transfer": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Transfer Leads (F2188) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Transfer Leads (F2188)", "Action": "navigate" },
+            { "Label": "Transfer Leads", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Lead Transfer",
+          "Instruction": "Choose Create (New Lead Transfer). Enter the lead transfer details. Name: Name for the Lead Transfer. Marketing Area: for example, Global. Program: Enter program if applicable. Transfer Period: Enter period for which the lead transfer should take place. Target Group : <Select target group created in previous chapter>. Interests: <all items of interests according to your needs>. Tags: <All tags according to your needs>. Note Interests can be maintained by the Marketing Administrator at Business Administration - Manage Interests. New tags can directly be created from the New Lead Transfer screen via Create Tag. Execution Start: <Select Date and Time>. Interval: for example, 1 Day. Choose Release.",
+          "Expected Result": "Note If the approval or release for the lead transfer should be done by the Marketing Manager, you can also include the Business Workflow. The status would then be set via Submit for approval. The workflow would be triggered and the manager could release the lead transfer via the Marketing Approvals (F2205) app. Afterwards the Marketing Expert would need to activate the Lead Transfer.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Create", "Action": "click" },
+            { "Label": "New Lead Transfer", "Action": "click" },
+            {
+              "Label": "Name",
+              "Action": "fill",
+              "Value": "Name for the Lead Transfer"
+            },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            {
+              "Label": "Program",
+              "Action": "fill",
+              "Value": "Enter program if applicable"
+            },
+            {
+              "Label": "Transfer Period",
+              "Action": "fill",
+              "Value": "Enter period for which the lead transfer should take place"
+            },
+            {
+              "Label": "Target Group ",
+              "Action": "fill",
+              "Value": "<Select target group created in previous chapter>"
+            },
+            {
+              "Label": "Interests",
+              "Action": "fill",
+              "Value": "<all items of interests according to your needs>"
+            },
+            {
+              "Label": "Tags",
+              "Action": "fill",
+              "Value": "<All tags according to your needs>"
+            },
+            { "Label": "Interests", "Action": "click" },
+            {
+              "Label": "Business Administration - Manage Interests",
+              "Action": "click"
+            },
+            { "Label": "New Lead Transfer", "Action": "click" },
+            { "Label": "Create Tag", "Action": "click" },
+            {
+              "Label": "Execution Start",
+              "Action": "fill",
+              "Value": "<Select Date and Time>"
+            },
+            { "Label": "Interval", "Action": "fill", "Value": "1 Day" },
+            { "Label": "Release", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Start Lead Transfer",
+          "Instruction": "Choose Start. Select a date and time for the scheduled execution or select Execute Immediately.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Start", "Action": "click" },
+            { "Label": "Execute Immediately", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Watch Execution Trend",
+          "Instruction": "Navigate back to the Lead Transfers object work list. Select the predefined filter started. After several execution runs took place, you can have a look at the execution trend. The height of the bars represents the relative height according to the members targeted per execution run. In the mouse over you can see the date of the execution run and the number of targeted members.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Lead Transfers", "Action": "click" },
+            { "Label": "started", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "6 5.4.4 Update Lead and Opportunity Status in SAP Cloud for Customer or SAP CRM": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Access SAP Cloud for Customer or SAP CRM",
+          "Instruction": "Log on to your SAP Cloud for Customer or SAP CRM system.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Check for Leads",
+          "Instruction": "Navigate to Leads.",
+          "Expected Result": "For each target group member, a lead should have been created in SAP Cloud for Customer or SAP CRM. The lead name is identical to the Campaign name.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Leads", "Action": "click" }]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Convert Lead to Opportunity",
+          "Instruction": "Convert the lead into an opportunity. Select the lead. In the Actions menu, choose Convert to Opportunity. Maintain necessary data like Name, Date and choose Save.",
+          "Expected Result": "The lead is converted to an opportunity.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Actions", "Action": "click" },
+            { "Label": "Convert to Opportunity", "Action": "click" },
+            { "Label": "Name", "Action": "click" },
+            { "Label": "Date", "Action": "click" },
+            { "Label": "Save", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "7 5.4.5 Display Lead and Opportunity Data in Contact Profile": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Contacts (F2380) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Contacts (F2380)", "Action": "navigate" },
+            { "Label": "Contacts", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Select Contact",
+          "Instruction": "Select a contact for which you want to check the lead status and choose the hyperlink of the contact name.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Check Lead Status",
+          "Instruction": "Navigate to the Leads tab.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Leads", "Action": "click" }]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Check Current Lead Stage",
+          "Instruction": "Check for the current lead stage.",
+          "Expected Result": "Lead stages indicate the progress of a contact concerning lead readiness. The current lead stage of a contact is displayed in a chronological sequence. It is calculated dynamically according building blocks used during segmentation. In addition, the current lead stage is displayed on the overview tab of the contact profile.",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Check Lead History",
+          "Instruction": "Check when and for how long the contact was in a certain lead stage and if there was a transfer of the lead to sales in this period.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "7",
+          "Test Step Name": "Check Sales Pipeline",
+          "Instruction": "Check the Sales Pipeline.",
+          "Expected Result": "Sales Pipeline You are provided with a table-based history about leads and opportunities. The following information is provided: Lead / Opportunity ID of the lead or opportunity in SAP Cloud for Customer and/or SAP CRM: You can navigate to the lead or opportunity in SAP Cloud for Customer and/or SAP CRM. Current Status Status of a lead in SAP Cloud for Customer and/or SAP CRM: The lead status is replicated from SAP Cloud for Customer and/or SAP CRM and can contain the following values: Open (Initial status for leads), Qualified (Initial status for leads being set up based on an SAP Marketing campaign), Declined (Final status for leads being declined in SAP Cloud for Customer and/or SAP CRM), Accepted (Status for leads being accepted in SAP Cloud for Customer and/or SAP CRM), Converted (Status for leads being converted to an opportunity in SAP Cloud for Customer and/or SAP CRM). As long as a lead is not processed in SAP Cloud for Customer and/or SAP CRM, the status is empty. Campaign Name of the related Campaign. Lead Time Duration in days from marketing-driven lead creation to conversion to an opportunity. Expected Revenue Expected value of the opportunity including its currency. The value is an indicator for the importance of the lead. Interests Interaction Products Interests assigned to the campaign that triggers the handover of contact for lead creation in SAP Cloud for Customer and/or SAP CRM: The interests provide additional information about the business environment of the lead.",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "8",
+          "Test Step Name": "Check Lead Nurture Streams",
+          "Instruction": "Check the Lead Nurture Streams of the Contact",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        }
+      ]
+    },
+    "8 5.5.1 Create Segmentation Model": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Segmentation Models (F1896A) app.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Application": " Segmentation Models (F1896A)",
+              "Action": "navigate"
+            },
+            { "Label": "Segmentation Models", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Segmentation Model",
+          "Instruction": "Choose Create. Select Segmentation Profile: All Contacts and confirm with Create.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Create", "Action": "click" },
+            {
+              "Label": "Segmentation Profile: All Contacts",
+              "Action": "click"
+            },
+            { "Label": "Create", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Assign Building Block",
+          "Instruction": "Drag and drop the Building Block BB4 you created earlier to the top level node.",
+          "Expected Result": "Building Block BB4 is assigned to the Segmentation Model.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "BB4", "Action": "click" }]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Save Segmentation Model",
+          "Instruction": "Choose the Save the Segmentation Model icon. Make the following entry and choose OK. Segmentation Model: for example, Lead Segmentation Stage 4.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Save the Segmentation Model", "Action": "click" },
+            { "Label": "OK", "Action": "click" },
+            {
+              "Label": "Segmentation Model",
+              "Action": "fill",
+              "Value": "Lead Segmentation Stage 4"
+            }
+          ]
+        }
+      ]
+    },
+    "9 5.5.2 Create and Release Target Group": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open Transaction",
+          "Instruction": "Stay in the Segmentation Model screen. Choose the icon in the lower right corner in the Lead Segmentation Stage 4: box area and select Create Target Group.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Segmentation Model", "Action": "click" },
+            { "Label": "Create Target Group", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Create Target Group",
+          "Instruction": "Make the following entries: Target Group Name: for example, Target Group for Call Qualification. Type: Target Group. Marketing Area: for example, Global. Category: Static.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Label": "Target Group Name",
+              "Action": "fill",
+              "Value": "Target Group for Call Qualification"
+            },
+            { "Label": "Type", "Action": "fill", "Value": "Target Group" },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            { "Label": "Category", "Action": "fill", "Value": "Static" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Save Target Group",
+          "Instruction": "Choose Save and Open.",
+          "Expected Result": "Note If you have set the Extended Status Management to Active, you would need to set the status to To be Released and only then the Manager can release the target group in a separate step.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Save and Open", "Action": "click" }]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Release Target Group",
+          "Instruction": "Set the status to Released.",
+          "Expected Result": "A message confirms the release of the target group, and also the status on the left side has switched to Released. Note By default the target group workflow is inactive. If the business workflow for target groups has been activated by the customer, the marketing manager needs to approve it via the Marketing Approvals (F2205) app.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Released", "Action": "click" }]
+        }
+      ]
+    },
+    "10 5.5.3 Create and Start Call Qualification Campaign": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Campaigns (F2352) app.",
+          "Expected Result": "A list of campaigns is displayed.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Campaigns (F2352)", "Action": "navigate" },
+            { "Label": "Campaigns", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Create Campaign",
+          "Instruction": "Choose Create (Create Campaign). Select Blank Campaign. On the next screen, enter the following campaign details: Name: <Campaign Name> Description: <Campaign Description> Start Date/End Date: Template: Call Center Marketing Area: for example, Global Target Group: Select target group created in previous chapter Choose Create.",
+          "Expected Result": "A campaign is created and the Campaign screen is displayed.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Create", "Action": "click" },
+            { "Label": "(Create Campaign)", "Action": "click" },
+            { "Label": "Blank Campaign", "Action": "click" },
+            { "Label": "Name", "Action": "fill", "Value": "<Campaign Name>" },
+            {
+              "Label": "Description",
+              "Action": "fill",
+              "Value": "<Campaign Description>"
+            },
+            { "Label": "Start Date/End Date", "Action": "click" },
+            { "Label": "Template", "Action": "fill", "Value": "Call Center" },
+            { "Label": "Marketing Area", "Action": "fill", "Value": "Global" },
+            {
+              "Label": "Target Group",
+              "Action": "fill",
+              "Value": "Select target group created in previous chapter"
+            },
+            { "Label": "Create", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Add Campaign Automation",
+          "Instruction": "The Campaign Designer is displayed. Assign an action by adding and dropping the action Trigger Call Qualification onto the target group box. Select Fill Details and enter a subject and a note according to your needs. Choose Done.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Trigger Call Qualification", "Action": "click" },
+            { "Label": "Fill Details", "Action": "click" },
+            { "Label": "Done", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Maintain Execution Details",
+          "Instruction": "Select the Campaign box. Choose Edit. In the Execution Details area set the Frequency to, for example, Recurring. Choose Set Recurrence, choose a recurrence of 1 per month. Set Schedule, for example, Immediate. Confirm the campaign automation with Done.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Campaign", "Action": "click" },
+            { "Label": "Edit", "Action": "click" },
+            { "Label": "Execution Details", "Action": "click" },
+            { "Label": "Frequency", "Action": "fill", "Value": "Recurring" },
+            {
+              "Label": "Set Recurrence",
+              "Action": "fill",
+              "Value": "1 per month"
+            },
+            { "Label": "Schedule", "Action": "fill", "Value": "Immediate" },
+            { "Label": "Done", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Start Campaign",
+          "Instruction": "Choose Start and confirm the dialog box with Yes.",
+          "Expected Result": "A message confirms the start of the campaign, and also the status on the right side has switched to Running (in case it was scheduled immediately), or to Scheduled. Note If the approval or release for the campaign should be done by the Marketing Manager, you can also include the Business Workflow. The status would then be set via Submit for approval. The Workflow would be triggered and the Manager could approve (or reject) the campaign via the Marketing Approvals (F2205) app. Afterwards, the Marketing Expert would need to start the Campaign.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Start", "Action": "click" },
+            { "Label": "Yes", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "7",
+          "Test Step Name": "Check Campaign Progress",
+          "Instruction": "Navigate to subset Automation and check the status of your campaign. If the status is Finished , check the right side of the screen with the overall campaign data.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Automation", "Action": "click" },
+            { "Label": "Finished", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "11 5.5.4 Update Lead and Activity Status in SAP Cloud for Customer": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Access SAP Cloud for Customer",
+          "Instruction": "Logon to your SAP Cloud for Customer System.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Check for Leads",
+          "Instruction": "Navigate to Marketing \u2013 Leads.",
+          "Expected Result": "For each target group member a lead should have been created in SAP Cloud for Customer. The lead name is identical to the target group name.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Marketing \u2013 Leads", "Action": "click" }]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Open Lead",
+          "Instruction": "Choose the hyperlink on the lead name.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Create Phone Call Activity",
+          "Instruction": "Navigate to the Activities subtab. In the Phone Cells section, select New. In the dialogue window, maintain the relevant data for the phone call and confirm with Save.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Activities", "Action": "click" },
+            { "Label": "New", "Action": "click" },
+            { "Label": "Save", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Select Phone Call",
+          "Instruction": "Choose the hyperlink on the phone call name.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Change Phone Call Status",
+          "Instruction": "After having called the contact, select Actions \u2013 Set Complete.",
+          "Expected Result": "The phone call status is set to Completed.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Actions \u2013 Set Complete", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "7",
+          "Test Step Name": "Convert Lead to Opportunity",
+          "Instruction": "Navigate back to the lead. Select Actions \u2013 Convert to Opportunity.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Label": "Actions \u2013 Convert to Opportunity",
+              "Action": "click"
+            }
+          ]
+        }
+      ]
+    },
+    "12 5.5.5 Review Campaign Performance": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Campaigns (F2352) app.",
+          "Expected Result": ".",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Campaigns (F2352)", "Action": "navigate" },
+            { "Label": "Campaigns", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Select Campaign",
+          "Instruction": "Choose the campaign you have created previously.",
+          "Expected Result": "A new view opens displaying the campaign details.",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        },
+        {
+          "Test Step #": "4",
+          "Test Step Name": "Check Status of Campaign",
+          "Instruction": "Navigate to the Automation subset. Make sure that the campaign Execution Status is Finished Successfully (green traffic light).",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Automation", "Action": "click" },
+            { "Label": "Finished Successfully", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "5",
+          "Test Step Name": "Check Campaign Overview",
+          "Instruction": "Choose the Overview subset.",
+          "Expected Result": "Several Campaign KPIs are displayed.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Overview", "Action": "click" }]
+        },
+        {
+          "Test Step #": "6",
+          "Test Step Name": "Analyze Campaign Performance",
+          "Instruction": "Choose the Performance subset.",
+          "Expected Result": "The Campaign performance is displayed. For example, all Leads and Phone Call Activities related to the campaign and their status.",
+          "Pass / Fail / Comment": "",
+          "IActions": [{ "Label": "Performance", "Action": "click" }]
+        }
+      ]
+    },
+    "13 5.6 Use Lead Dashboard": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Lead Dashboard app. In the Lead Management card, choose the Lead Dashboard SAP Analytics Cloud Story. Logon with the SAP Analytics Cloud credentials if required. After logon with the SAP Analytics cloud credentials, the system requires another logon with the Marketing Expert credentials in the Set Credentials dialog box.",
+          "Expected Result": "The Lead Dashboard is displayed in a new window.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": " Lead Dashboard ", "Action": "navigate" },
+            { "Label": "Lead Dashboard", "Action": "click" },
+            { "Label": "Lead Management", "Action": "click" },
+            { "Label": "Lead Dashboard", "Action": "click" },
+            { "Label": "Set Credentials", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Check Reports",
+          "Instruction": "Check the available Lead, Opportunity, and Lead Stages related reports. Note You can either create your own SAP Analytics Cloud stories based on the relevant data source or you can use the preconfigured story samples for SAP Marketing Cloud that are provided with the SAP Analytics Cloud content.",
+          "Expected Result": "The data of the selected report is displayed.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Label": "Lead", "Action": "click" },
+            { "Label": "Opportunity", "Action": "click" },
+            { "Label": "Lead Stages", "Action": "click" }
+          ]
+        }
+      ]
+    },
+    "14 5.7 Analyze Reports in Analytics and Report Gallery": {
+      "Procedure": [
+        {
+          "Test Step #": "1",
+          "Test Step Name": "Open the SAP Fiori launchpad",
+          "Instruction": "Log on to the SAP Fiori launchpad as a Marketing Expert.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            { "Application": "Marketing Expert", "Action": "navigate" }
+          ]
+        },
+        {
+          "Test Step #": "2",
+          "Test Step Name": "Access App",
+          "Instruction": "Open the Analytics and Report Gallery (F2955) app. In the Leads and Accounts card choose one of the analytic stories or operational reports.",
+          "Expected Result": "The app opens and the reports are listed. You can switch to other cards to check the available stories.",
+          "Pass / Fail / Comment": "",
+          "IActions": [
+            {
+              "Application": " Analytics and Report Gallery (F2955)",
+              "Action": "navigate"
+            },
+            { "Label": "Analytics and Report Gallery", "Action": "click" },
+            { "Label": "Leads and Accounts", "Action": "click" }
+          ]
+        },
+        {
+          "Test Step #": "3",
+          "Test Step Name": "Analyze Reports",
+          "Instruction": "Check the reports and analyze the results. Note You can either create your own SAP Analytics Cloud stories or operational reports based on the relevant data source or you can use the preconfigured story samples for SAP Marketing Cloud, which are provided with the SAP Analytics Cloud Content.",
+          "Expected Result": "",
+          "Pass / Fail / Comment": "",
+          "IActions": []
+        }
+      ]
+    }
+  }
+}

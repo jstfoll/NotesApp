@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block container %}
+
+  <title>Download  File</title>
+  <h2>Download excel all variants </h2>
+  <a href="{{ url_for('download', filename=filename) }}" class="yellow darken-3 btn">Download</a>
+
+{% endblock %}

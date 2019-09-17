@@ -1,0 +1,86 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css")
+        link(rel="stylesheet", href="//cdn.quilljs.com/1.3.6/quill.bubble.css")
+        title #{BPD_Details.name}
+        style.
+            .grid .row {
+                margin-top: 2rem 
+            }
+            .title.row .column .huge.header {
+                font-size: 8rem
+            }
+            .title.row .column .sub.header {
+                font-size: 2rem
+            }
+    body(contenteditable="true")
+        .ui.grid.divided.container
+            .row.two.column.title
+                .five.wide.column
+                    .ui.huge.header #{BPD_Details.name}
+                    .ui.sub.header #{BPD_Details.sub_header}
+
+                .nine.wide.column
+                    .ui.header Purpose
+                    |   #{Purpose}
+            .row
+                .ui.huge.header Roles
+                table.ui.celled.teal.table
+                    thead
+                        tr
+                            th Business Role
+                            th Business Role ID as Delivered by SAP
+                    tbody
+                        each role in Roles
+                            tr
+                                td #{role['Business Role']}
+                                td #{role['Business Role ID as Delivered by SAP']}
+            .row
+                .ui.huge.header Overview Table
+                table.ui.celled.green.table
+                    thead
+                        tr
+                            th Process Step
+                            th Business Role
+                            th App Name
+                            th Expected Results
+                    tbody
+                        each item in Overview_Table
+                            tr
+                                td #{item['Process Step']}
+                                td #{item['Business Role']}
+                                td #{item['App Name']}
+                                td #{item['Expected Results']}
+            .row
+                .ui.huge.header Test Procedures
+                .ui.basic.segment
+                    each process in Object.keys(Test_Processes)
+                        .ui.divider
+                        .ui.huge.header #{process}
+                        table.ui.celled.table
+                            thead
+                                tr
+                                    th Test Step #
+                                    th Test Step Name
+                                    th Instruction
+                                    th Expected Result
+                                    th Pass / Fail / Comment
+                            tbody
+                                each item in Test_Processes[process].Procedure
+                                    tr
+                                        td #{item['Test Step #']}
+                                        td #{item['Test Step Name']}
+                                        td #{item['Instruction']}
+                                        td #{item['Expected Result']}
+                                        td #{item['Pass / Fail / Comment']}
+
+
+        script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js")
+        script(src="//cdn.quilljs.com/1.3.6/quill.js")
+        script.
+            //- Array.from(document.querySelectorAll('td')).map(el => new Quill(el, {
+            //-     theme: 'bubble'
+            //- }))
