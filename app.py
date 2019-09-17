@@ -5,12 +5,9 @@ import json
 import datetime
 from werkzeug.utils import secure_filename
 from pathlib import Path
-import templater as template
 import platform
 import requests
-import verbose
-import re
-regex = r"\$[ \*,]+\$"
+
 app = Flask(__name__, static_url_path='')
 if platform.system() == 'Windows':
     UPLOAD_FOLDER = Path(__file__).parent.joinpath('uploads')
