@@ -32,9 +32,33 @@
           {% block container %}{% endblock %}
       </div>
     </div>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(function() {
+        $('select').formSelect();
+      });
+    </script>
+    <script>
+    $("#Semester .row").hide();
+    $("#Selector").change ( function () {
+    $("#Semester .row").hide();
+    var targID  = $(this).val ();
+    console.log(targID)
+    console.log('#' + targID)
+    $('div#' + targID).show();
+} )
+</script>
+    <script>
+        $("#Subject .row").hide();
+        $("#subselect").change ( function () {
+        $("#Subject .row").hide();
+        var targID  = $(this).val ();
+        console.log(targID)
+        console.log('#' + targID)
+        $('div#' + targID).show();
+    } )
+    </script>
 
 </body>
 </body>

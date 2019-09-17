@@ -26,7 +26,7 @@ def staic_img(path):
 
 @app.route('/')
 def homepage():
-    db={'Semester-1':{'Subject-1':['Module-1','Module-2','Module-3','Module-4'],'Subject-2':['Module-1','Module-2','Module-3','Module-4'],'Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-2':{'Subject-1':['Module-1','Module-2','Module-3','Module-4'],'Subject-2':['Module-1','Module-2','Module-3','Module-4'],'Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-3':{'Subject-1':['Module-1','Module-2','Module-3','Module-4'],'Subject-2':['Module-1','Module-2','Module-3','Module-4'],'Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-4':{'Subject-1':['Module-1','Module-2','Module-3','Module-4'],'Subject-2':['Module-1','Module-2','Module-3','Module-4'],'Subject-3':['Module-1','Module-2','Module-3','Module-4']}}
+    db={'Semester-1':{'S1Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S1Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S1Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-2':{'S2Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S2Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S2Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-3':{'S3Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S3Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S3Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-4':{'S4Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S4Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S4Subject-3':['Module-1','Module-2','Module-3','Module-4']}}
     return render_template('upload.html',db=db)
 
 @app.route('/creator')
