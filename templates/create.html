@@ -1,28 +1,825 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
-        <script src="https://unpkg.com/grapesjs"></script>
-        <script src="https://rawcdn.githack.com/artf/grapesjs-blocks-basic/c5b3134fc55b7d40b3ffa945c32e542d3471bd3e/dist/grapesjs-blocks-basic.min.js"></script>
-        <style>
-            body {
-                margin: 0
-            }
-            body #gjs {
-                height: 100%
-            }
-        </style>
-    </head>
-    <body>
-        <div id="gjs"></div>
+<html data-kantu="1" class="gr__localhost">
 
-        <script type="text/javascript">
-        var editor = grapesjs.init({
-            container : '#gjs',
-            height: 'auto',
-            plugins: ['gjs-blocks-basic'],
-            components: '<div class="txt-red">Hello world!</div>',
-            style: '.txt-red{color: red}',
-        });
-        </script>
-    </body>
+<head>
+    <title>Document Generator</title>
+    <link rel="icon" href="https://png.icons8.com/dotty/40/000000/quick-mode-on.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script async="" src="https://negbar.ad-blocker.org/chrome/adblocker-chromeglobalinjectjs.js"></script>
+</head>
+
+<body class="blue-grey lighten-1" data-gr-c-s-loaded="true" style="zoom: 1;" cz-shortcut-listen="true">
+    <nav>
+        <div class=" blue-grey darken-1 nav-wrapper">
+            <!-- <a href="/" class="center brand-logo yellow-text text-darken-3">Test Script Generator</a> -->
+        </div>
+    </nav>
+
+    <div class="row">
+
+
+
+    </div>
+    <div class="container">
+
+
+        <title>Upload new File</title>
+
+        <div class="row">
+            <div class="col s12">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="card blue-grey darken-2 card">
+                        <div class="card-content white-text">
+                            <span class="yellow-text text-darken-2 card-title">Select Semester</span>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                            type="text" readonly="true"
+                                            data-target="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c">
+                                        <ul id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c"
+                                            class="dropdown-content select-dropdown" tabindex="0">
+                                            <li class="disabled selected"
+                                                id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c0" tabindex="0">
+                                                <span>Pick Semester</span></li>
+                                            <li id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c1" tabindex="0">
+                                                <span>Semester-1</span></li>
+                                            <li id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c2" tabindex="0">
+                                                <span>Semester-2</span></li>
+                                            <li id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c3" tabindex="0">
+                                                <span>Semester-3</span></li>
+                                            <li id="select-options-2b6f567d-4248-326e-091a-2c8b9fea8f6c4" tabindex="0">
+                                                <span>Semester-4</span></li>
+                                        </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5z"></path>
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                        </svg><select id="Selector" name="Semester" tabindex="-1">
+                                            <option value="" disabled="" selected="">Pick Semester</option>
+
+                                            <option value="Semester-1">Semester-1</option>
+
+                                            <option value="Semester-2">Semester-2</option>
+
+                                            <option value="Semester-3">Semester-3</option>
+
+                                            <option value="Semester-4">Semester-4</option>
+
+                                        </select>
+                                    </div>
+                                    <label>Select a Semester</label>
+                                </div>
+                            </div>
+                            <div id="Semester">
+
+
+                                <div class="row" id="Semester-1" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Subject</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-81928df8-0c00-f03e-cca2-efe73b0ab261">
+                                            <ul id="select-options-81928df8-0c00-f03e-cca2-efe73b0ab261"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-81928df8-0c00-f03e-cca2-efe73b0ab2610"
+                                                    tabindex="0"><span>Pick Subject</span></li>
+                                                <li id="select-options-81928df8-0c00-f03e-cca2-efe73b0ab2611"
+                                                    tabindex="0"><span>S1Subject-1</span></li>
+                                                <li id="select-options-81928df8-0c00-f03e-cca2-efe73b0ab2612"
+                                                    tabindex="0"><span>S1Subject-2</span></li>
+                                                <li id="select-options-81928df8-0c00-f03e-cca2-efe73b0ab2613"
+                                                    tabindex="0"><span>S1Subject-3</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select name="Semester-1" class="subselect" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Subject</option>
+
+                                                <option value="S1Subject-1">S1Subject-1</option>
+
+                                                <option value="S1Subject-2">S1Subject-2</option>
+
+                                                <option value="S1Subject-3">S1Subject-3</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Subject</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="Semester-2" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Subject</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f">
+                                            <ul id="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f0"
+                                                    tabindex="0"><span>Pick Subject</span></li>
+                                                <li id="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f1"
+                                                    tabindex="0"><span>S2Subject-1</span></li>
+                                                <li id="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f2"
+                                                    tabindex="0"><span>S2Subject-2</span></li>
+                                                <li id="select-options-eb442f95-98a5-e64c-0f4f-0984d19c853f3"
+                                                    tabindex="0"><span>S2Subject-3</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select name="Semester-2" class="subselect" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Subject</option>
+
+                                                <option value="S2Subject-1">S2Subject-1</option>
+
+                                                <option value="S2Subject-2">S2Subject-2</option>
+
+                                                <option value="S2Subject-3">S2Subject-3</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Subject</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="Semester-3" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Subject</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e">
+                                            <ul id="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e0"
+                                                    tabindex="0"><span>Pick Subject</span></li>
+                                                <li id="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e1"
+                                                    tabindex="0"><span>S3Subject-1</span></li>
+                                                <li id="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e2"
+                                                    tabindex="0"><span>S3Subject-2</span></li>
+                                                <li id="select-options-4050aaf1-0f8e-bb5c-bce4-757ddf95980e3"
+                                                    tabindex="0"><span>S3Subject-3</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select name="Semester-3" class="subselect" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Subject</option>
+
+                                                <option value="S3Subject-1">S3Subject-1</option>
+
+                                                <option value="S3Subject-2">S3Subject-2</option>
+
+                                                <option value="S3Subject-3">S3Subject-3</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Subject</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="Semester-4" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Subject</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-a94749a2-01c9-ff33-c954-81f475790344">
+                                            <ul id="select-options-a94749a2-01c9-ff33-c954-81f475790344"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-a94749a2-01c9-ff33-c954-81f4757903440"
+                                                    tabindex="0"><span>Pick Subject</span></li>
+                                                <li id="select-options-a94749a2-01c9-ff33-c954-81f4757903441"
+                                                    tabindex="0"><span>S4Subject-1</span></li>
+                                                <li id="select-options-a94749a2-01c9-ff33-c954-81f4757903442"
+                                                    tabindex="0"><span>S4Subject-2</span></li>
+                                                <li id="select-options-a94749a2-01c9-ff33-c954-81f4757903443"
+                                                    tabindex="0"><span>S4Subject-3</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select name="Semester-4" class="subselect" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Subject</option>
+
+                                                <option value="S4Subject-1">S4Subject-1</option>
+
+                                                <option value="S4Subject-2">S4Subject-2</option>
+
+                                                <option value="S4Subject-3">S4Subject-3</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Subject</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="Subject">
+
+
+
+                                <div class="row" id="S1Subject-1" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d8">
+                                            <ul id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d8"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d80"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d81"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d82"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d83"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-768df960-48fe-a2bf-a009-d8cc4f2753d84"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S1Subject-1" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S1Subject-2" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c60">
+                                            <ul id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c60"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c600"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c601"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c602"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c603"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-47eb21f4-52fd-08a0-a3f9-e92389ac4c604"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S1Subject-2" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S1Subject-3" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b160">
+                                            <ul id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b160"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b1600"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b1601"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b1602"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b1603"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-b1776120-b4bc-ca6b-ab0c-e3184a63b1604"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S1Subject-3" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row" id="S2Subject-1" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe">
+                                            <ul id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe0"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe1"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe2"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe3"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-a1c6f7ee-8d2f-2f77-2bd3-0398133701fe4"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S2Subject-1" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S2Subject-2" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc4">
+                                            <ul id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc4"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc40"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc41"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc42"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc43"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-b9ff73d5-6b8a-a286-1d3d-321e5137ccc44"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S2Subject-2" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S2Subject-3" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa">
+                                            <ul id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa0"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa1"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa2"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa3"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-05f04b0d-6c7e-9ffe-d2c1-3cb6b4819caa4"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S2Subject-3" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row" id="S3Subject-1" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f7">
+                                            <ul id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f7"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f70"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f71"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f72"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f73"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-ec60d4ac-4b58-941d-1ab9-df7e997bc7f74"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S3Subject-1" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S3Subject-2" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf269">
+                                            <ul id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf269"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf2690"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf2691"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf2692"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf2693"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-dc32dee0-0668-c43b-7147-85fa5a2bf2694"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S3Subject-2" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S3Subject-3" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-888bca1d-544b-e038-129b-9edd2f748cdc">
+                                            <ul id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc0"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc1"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc2"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc3"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-888bca1d-544b-e038-129b-9edd2f748cdc4"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S3Subject-3" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row" id="S4Subject-1" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b">
+                                            <ul id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b0"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b1"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b2"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b3"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-cdc9e91e-5e0b-6be6-e579-c66cebd59c8b4"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S4Subject-1" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S4Subject-2" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-e48c3709-e227-9a53-4a1b-47335ea22056">
+                                            <ul id="select-options-e48c3709-e227-9a53-4a1b-47335ea22056"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-e48c3709-e227-9a53-4a1b-47335ea220560"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-e48c3709-e227-9a53-4a1b-47335ea220561"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-e48c3709-e227-9a53-4a1b-47335ea220562"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-e48c3709-e227-9a53-4a1b-47335ea220563"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-e48c3709-e227-9a53-4a1b-47335ea220564"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S4Subject-2" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="S4Subject-3" style="display: none;">
+                                    <span class="yellow-text text-darken-2 card-title">Select Module</span>
+                                    <div class="input-field col s12">
+                                        <div class="select-wrapper"><input class="select-dropdown dropdown-trigger"
+                                                type="text" readonly="true"
+                                                data-target="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc905">
+                                            <ul id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc905"
+                                                class="dropdown-content select-dropdown" tabindex="0">
+                                                <li class="disabled selected"
+                                                    id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc9050"
+                                                    tabindex="0"><span>Pick Module</span></li>
+                                                <li id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc9051"
+                                                    tabindex="0"><span>Module-1</span></li>
+                                                <li id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc9052"
+                                                    tabindex="0"><span>Module-2</span></li>
+                                                <li id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc9053"
+                                                    tabindex="0"><span>Module-3</span></li>
+                                                <li id="select-options-f5d766bf-61b9-7f7b-1d51-8156b2ddc9054"
+                                                    tabindex="0"><span>Module-4</span></li>
+                                            </ul><svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 10l5 5 5-5z"></path>
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                            </svg><select class="pickmodule" name="S4Subject-3" tabindex="-1">
+                                                <option value="" disabled="" selected="">Pick Module</option>
+
+                                                <option value="Module-1">Module-1</option>
+
+                                                <option value="Module-2">Module-2</option>
+
+                                                <option value="Module-3">Module-3</option>
+
+                                                <option value="Module-4">Module-4</option>
+
+                                            </select>
+                                        </div>
+                                        <label>Select a Module</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="fileup" style="display: none;">
+                                <span class="yellow-text text-darken-2 card-title">Upload file</span>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="file-field input-field">
+                                            <div class="yellow darken-3 btn">
+                                                <span class="black-text">File</span>
+                                                <input type="file" name="file" required="" dcvalue="">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text" dcvalue="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <span class="black-text">File Name</span>
+                                        <input name="file_name" required="" dcvalue="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <span class="black-text">Description</span>
+                                        <input name="file_desc required>
+                  </div>
+                </div>
+            </div>
+      
+      
+      
+      
+      
+      
+      
+            </div>
+        </div>
+        </form>
+      </div>
+      </div>
+      
+      
+        </div>
+        </div>
+        <script src=" https:="" ajax.googleapis.com="" ajax="" libs="" jquery="" 2.0.0="" jquery.min.js"="" dcvalue="">
+                                        <script
+                                            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+                                        <script>
+                                            $(function () {
+                                                $('select').formSelect();
+                                            });
+                                        </script>
+                                        <script>
+                                            $("#Semester .row").hide();
+                                            $("#Selector").change(function () {
+                                                $("#Semester .row").hide();
+                                                var targID = $(this).val();
+                                                console.log(targID)
+                                                console.log('#' + targID)
+                                                $('div#' + targID).show();
+                                            })
+                                        </script>
+                                        <script>
+                                            $("#Subject .row").hide();
+                                            $(".subselect").change(function () {
+                                                $("#Subject .row").hide();
+                                                var targID = $(this).val();
+                                                console.log(targID)
+                                                console.log('#' + targID)
+                                                $('div#' + targID).show();
+                                            })
+                                        </script>
+                                        <script>
+                                            $(".fileup").hide();
+                                            $(".pickmodule").change(function () {
+                                                $(".fileup").hide();
+                                                $(".fileup").show();
+                                            })
+                                        </script>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

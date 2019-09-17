@@ -5,29 +5,30 @@
 
 <div class="row">
   <div class="col s12">
-    <form action="{{ url_for('.upload') }}" method=post enctype=multipart/form-data> 
-      <div class="card blue-grey darken-2 card">
+    <form action="{{ url_for('.upload') }}" method=post enctype=multipart/form-data> <div
+      class="card blue-grey darken-2 card">
       <div class="card-content white-text">
         <span class="yellow-text text-darken-2 card-title">Select Semester</span>
-        
-          <div class="row">
-            <div class="input-field col s12">
-              <select id="Selector" name="Semester">
-                <option value="" disabled selected>Pick Semester</option>
-                {% for sem in db.keys() %}
-                <option value={{sem}}>{{sem}}</option>
-                {% endfor %}
-              </select>
-              <label>Select a Semester</label>
-            </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <select id="Selector" name="Semester">
+              <option value="" selected="selected" disabled selected>Pick Semester</option>
+              {% for sem in db.keys() %}
+              <option value={{sem}}>{{sem}}</option>
+              {% endfor %}
+            </select>
+            <label>Select a Semester</label>
           </div>
-          <div id="Semester">
+        </div>
+        <div id="Semester">
           {% for sem in db.keys() %}
-        
+
           <div class="row" id={{sem}}>
+            <span class="yellow-text text-darken-2 card-title">Select Subject</span>
             <div class="input-field col s12">
-              <select name={{sem}} id='subselect'>
-                <option value="" disabled selected>Pick Subject</option>
+              <select name=Subject class='subselect'>
+                <option value="" selected="selected" disabled selected>Pick Subject</option>
                 {% for sub in db[sem].keys() %}
                 <option value={{sub}}>{{sub}}</option>
                 {% endfor %}
@@ -36,32 +37,58 @@
             </div>
           </div>
           {% endfor %}
-          </div>
+        </div>
 
-          <div id="Subject">
-              {% for sem in db.keys() %}
-              {% for sub in db[sem].keys() %}
-              <div class="row" id={{sub}}>
-                <div class="input-field col s12">
-                  <select name={{sub}} >
-                    <option value="" disabled selected>Pick Module</option>
-                    {% for mod in db[sem][sub] %}
-                    <option value={{mod}}>{{mod}}</option>
-                    {% endfor %}
-                  </select>
-                  <label>Select a Module</label>
+        <div id="Subject">
+          {% for sem in db.keys() %}
+          {% for sub in db[sem].keys() %}
+
+          <div class="row" id={{sub}}>
+            <span class="yellow-text text-darken-2 card-title">Select Module</span>
+            <div class="input-field col s12">
+              <select class="pickmodule" name=Module>
+                <option value="" selected="selected" disabled selected>Pick Module</option>
+                {% for mod in db[sem][sub] %}
+                <option value={{mod}}>{{mod}}</option>
+                {% endfor %}
+              </select>
+              <label>Select a Module</label>
+            </div>
+          </div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+        <div class='fileup'>
+          <span class="yellow-text text-darken-2 card-title">Upload file</span>
+          <div class="row">
+            <div class="input-field col s12">
+              <div class="file-field input-field">
+                <div class="yellow darken-3 btn">
+                  <span class="black-text">File</span>
+                  <input class="file_values" type="file" name="file" required>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
                 </div>
               </div>
-              {% endfor %}
-              {% endfor %}
-              </div>
-
-
-         
-      
-          
-        
-
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <span class="yellow-text text-darken-2 card-title">File Name</span>
+              <input class="file_values" name="file_name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <span class="yellow-text text-darken-2 card-title">Description</span>
+              <input class="file_values" name="file_desc" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <input value="submit" type="submit" class="yellow darken-3 white-text waves-effect btn">
       </div>
   </div>
   </form>

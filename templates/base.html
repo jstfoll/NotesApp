@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Document Generator</title>
-<link rel="icon" href="https://png.icons8.com/dotty/40/000000/quick-mode-on.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" >
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<head>
+  <title>Document Generator</title>
+  <link rel="icon" href="https://png.icons8.com/dotty/40/000000/quick-mode-on.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 </head>
 
@@ -17,49 +18,58 @@
     </div>
   </nav>
 
-      <div class="row">
-          {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <ul class=flashes>
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
-      </div>
-      <div class="container">
-          {% block container %}{% endblock %}
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script>
-      $(function() {
-        $('select').formSelect();
-      });
-    </script>
-    <script>
+  <div class="row">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  </div>
+  <div class="container">
+    {% block container %}{% endblock %}
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(function () {
+      $('select').formSelect();
+    });
+  </script>
+  <script>
     $("#Semester .row").hide();
-    $("#Selector").change ( function () {
-    $("#Semester .row").hide();
-    var targID  = $(this).val ();
-    console.log(targID)
-    console.log('#' + targID)
-    $('div#' + targID).show();
-} )
-</script>
-    <script>
-        $("#Subject .row").hide();
-        $("#subselect").change ( function () {
-        $("#Subject .row").hide();
-        var targID  = $(this).val ();
-        console.log(targID)
-        console.log('#' + targID)
-        $('div#' + targID).show();
-    } )
+    $("#Selector").change(function () {
+      $("#Semester .row").hide();
+      var targID = $(this).val();
+      console.log(targID)
+      console.log('#' + targID)
+      $('div#' + targID).show();
+    })
+  </script>
+  <script>
+    $("#Subject .row").hide();
+    $(".subselect").change(function () {
+      $("#Subject .row").hide();
+      var targID = $(this).val();
+      console.log(targID)
+      console.log('#' + targID)
+      $('div#' + targID).show();
+    })
+  </script>
+  <script>
+      $(".fileup").hide();
+      $(".pickmodule").change(function () {
+        $(".file_values").val('');
+        $(".fileup").hide();
+        $(".fileup").show();
+      })
     </script>
 
 </body>
 </body>
+
 </html>
