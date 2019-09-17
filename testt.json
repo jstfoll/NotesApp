@@ -1,7 +1,136 @@
 {
-    "Semester": "Semester-3",
-    "Subject": "S3Subject-3",
-    "Module": "Module-1",
-    "file_name": "Test",
-    "file_desc": "TestTestTestTestTestTestTestTestTestTestTestTestTestv"
-}
+    "Semester-1": {
+        "Engg Physics": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Basic Electrical": 
+        [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "EGDL": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "CIVIL Engg": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "English": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Mathematics-1": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ]
+    },
+    "Semester-2": {
+        "Mathematics-2": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Engg Chemistry": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Elements Mechanical Engg": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "CPS": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Basic Electronics": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "English": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ]
+    },
+    "Semester-3": {
+        "Mathematics 3": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Data Structures": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Software Engineering": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Computer Organisation": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Analog and Digital Electronics": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ],
+        "Discrete Mathematical Structures": [
+            "Module-1",
+            "Module-2",
+            "Module-3",
+            "Module-4",
+            "Module-5"
+        ]
+    }
+
+    }

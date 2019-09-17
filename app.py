@@ -14,7 +14,7 @@ if platform.system() == 'Windows':
 else:
     UPLOAD_FOLDER = r'uploads'
 
-ALLOWED_EXTENSIONS = set(['docx','xlsx','txt','png'])
+ALLOWED_EXTENSIONS = set(['docx','xlsx','txt','png','pdf','jpeg','pptx','doc','ppt'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/img/<path:path>')
@@ -23,20 +23,19 @@ def staic_img(path):
 
 @app.route('/')
 def homepage():
-    db={'Semester-1':{'S1Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S1Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S1Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-2':{'S2Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S2Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S2Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-3':{'S3Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S3Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S3Subject-3':['Module-1','Module-2','Module-3','Module-4']},'Semester-4':{'S4Subject-1':['Module-1','Module-2','Module-3','Module-4'],'S4Subject-2':['Module-1','Module-2','Module-3','Module-4'],'S4Subject-3':['Module-1','Module-2','Module-3','Module-4']}}
+    db={ "Semester-1": { "Engg Physics": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Basic Electrical": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "EGDL": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "CIVIL Engg": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "English": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Mathematics-1": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ] }, "Semester-2": { "Mathematics-2": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Engg Chemistry": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Elements Mechanical Engg": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "CPS": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Basic Electronics": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "English": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ] }, "Semester-3": { "Mathematics 3": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Data Structures": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Software Engineering": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Computer Organisation": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Analog and Digital Electronics": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ], "Discrete Mathematical Structures": [ "Module-1", "Module-2", "Module-3", "Module-4", "Module-5" ] } }
     return render_template('upload.html',db=db)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        # check if the post request has the file part
+        
         if 'file' not in request.files:
             flash('No file uploaded')
             return redirect(request.url)
         file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
+
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
@@ -49,7 +48,7 @@ def upload():
             filename = secure_filename(file.filename)
             filename=filename.split('.')[-1]
             ffname=data['Semester']+'//'+data['Subject']+'//'+data['Module']
-            ffname1=data['file_name']+filename
+            ffname1=data['file_name'].replace(' ','_')+'.'+filename
             if(os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'],ffname))):
                 file.save(str(os.path.join(app.config['UPLOAD_FOLDER'],ffname,ffname1)))
             else:
